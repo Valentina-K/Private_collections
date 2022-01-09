@@ -17,7 +17,7 @@ namespace Private_collections.Controllers
         {
             _logger = logger;
         }
-
+        [HttpGet]
         public IActionResult Index()
         {
             ThemeCollections theme;
@@ -28,6 +28,12 @@ namespace Private_collections.Controllers
                 collections.Add(theme);
             }
             return View(collections);
+        }
+        [HttpPost]
+        public IActionResult Index(ThemeCollections theme)
+        {
+            ThemeCollections _theme = theme;
+            return View();
         }
 
         public IActionResult Privacy()
