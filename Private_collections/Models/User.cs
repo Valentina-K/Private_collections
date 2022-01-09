@@ -7,12 +7,17 @@ namespace Private_collections.Models
 {
     public class User
     {
+        public User()
+        {
+            Collections = new List<Collection>();
+        }
         public int Id { get; set; }
         public string Email { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public int? RoleId { get; set; }
         public Role Role { get; set; }
+        public List<Collection> Collections { get; set; }
 
     }
     public class Role
