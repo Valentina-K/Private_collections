@@ -20,7 +20,14 @@ namespace Private_collections.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            ThemeCollections theme;
+            List<ThemeCollections> collections = new List<ThemeCollections>();
+            for(int i = 0; i <= 6; i++)
+            {
+                theme = new ThemeCollections() { Id=i, Description="My collection "+i, Name= "Theme # " + i };
+                collections.Add(theme);
+            }
+            return View(collections);
         }
 
         public IActionResult Privacy()
