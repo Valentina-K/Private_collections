@@ -30,6 +30,7 @@ namespace Private_collections.Models
     }
     public class Tag
     {
+        public int Id { get; set; }
         public string Name { get; set; }
     }
     public class Collection
@@ -67,6 +68,7 @@ namespace Private_collections.Models
     }
     public class Like
     {
+        public int Id { get; set; }
         public int UserId { get; set; }
         public int CollectionId { get; set; }
     }
