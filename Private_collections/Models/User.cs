@@ -1,35 +1,21 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Private_collections.Models
 {
-    public class User
+    public class User:IdentityUser
     {
         public User()
         {
             Collections = new List<Collection>();
         }
-        public int Id { get; set; }
-        public string Email { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public int? RoleId { get; set; }
-        public Role Role { get; set; }
         public List<Collection> Collections { get; set; }
 
     }
-    public class Role
-    {
-        public int Id { get; set; }
-        public string RoleName { get; set; }
-        public List<User> Users { get; set; }
-        public Role()
-        {
-            Users = new List<User>();
-        }
-    }
+    
     public class Theme
     {
         public int Id { get; set; }
@@ -78,5 +64,10 @@ namespace Private_collections.Models
                     Tags.Add(new Tag { Name = tag });
             }
         }
+    }
+    public class Like
+    {
+        public int UserId { get; set; }
+        public int CollectionId { get; set; }
     }
 }
