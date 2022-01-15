@@ -44,7 +44,7 @@ namespace Private_collections.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public int ThemeId { get; set; }
-        public ThemeCollections Theme { get; set; }
+        public Theme Theme { get; set; }
         public int UserId { get; set; }
         public string PathMedia { get; set; }
         public DateTime DateAdded { get; set; }
